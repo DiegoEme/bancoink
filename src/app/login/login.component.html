@@ -15,13 +15,22 @@
     <h3 class="title">INGRESA A TU CUENTA</h3>
 
     <mat-form-field class="field">
-      <input matInput placeholder="Usuario" />
+      <input
+        matInput
+        placeholder="Usuario"
+        [(ngModel)]="userCredentials.email"
+      />
     </mat-form-field>
     <mat-form-field class="field">
-      <input type="password" matInput placeholder="Contraseña" />
+      <input
+        type="password"
+        [(ngModel)]="userCredentials.pass"
+        matInput
+        placeholder="Contraseña"
+      />
     </mat-form-field>
 
-    <button (click)="irConsultas()" class="btn">INGRESAR</button>
+    <button (click)="login()" class="btn">INGRESAR</button>
     <p class="options"><a href="">Olvidé mi PIN</a></p>
     <p class="options">
       <a href="">Olvidé mi número de celular empresarial</a>
