@@ -1,6 +1,12 @@
 import {AfterViewInit, Component, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
+import {FormGroup, FormControl} from '@angular/forms';
+
+interface Food {
+  value: string;
+  viewValue: string;
+}
 
 @Component({
   selector: 'app-consultas',
@@ -9,7 +15,17 @@ import {MatTableDataSource} from '@angular/material/table';
 })
 export class ConsultasComponent implements AfterViewInit {
 
-  
+  foods: Food[] = [
+    {value: '0', viewValue: 'Nombre'},
+    {value: '1', viewValue: 'Cel'},
+    {value: '2', viewValue: 'Email'},
+    {value: '1', viewValue: 'Fecha de compra'},
+    {value: '2', viewValue: 'Edad'}
+  ];
+
+
+  date = new FormControl(new Date());
+  serializedDate = new FormControl((new Date()).toISOString());
 
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
@@ -19,6 +35,7 @@ export class ConsultasComponent implements AfterViewInit {
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
+ 
 }
 
 export interface PeriodicElement {
@@ -26,6 +43,7 @@ export interface PeriodicElement {
   position: number;
   weight: number;
   symbol: string;
+  
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [

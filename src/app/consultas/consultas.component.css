@@ -1,5 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+
 table {
   width: 100%;
+}
+
+.title {
+  color: #1eeb00;
+  font-family: "Montserrat", sans-serif;
+  font-size: 32px;
+  margin: 1em;
 }
 .example-container {
   position: absolute;
@@ -7,12 +16,58 @@ table {
   bottom: 0;
   left: 0;
   right: 0;
-  background: #eee;
+  background: #fff;
 }
 .mat-drawer {
   width: 195px;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  color: #5d5d5d;
+  font-size: 32px;
+  font-family: "Montserrat", sans-serif;
 }
 
 .mat-elevation-z8 {
   margin: 25px;
+}
+
+.dates {
+  width: 180px;
+  margin: 0 2em;
+}
+.campo {
+  margin: 0 2em;
+}
+.search {
+  max-width: 610px;
+  min-width: 100px;
+  width: 100%;
+  margin: 0 2em;
+}
+
+.btn {
+  all: unset;
+  background-color: #1eeb00;
+  color: #004b40;
+  font-weight: 500;
+  padding: 10px 50px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  margin: 0 2em;
+}
+
+@media screen and (max-width: 600px) {
+  .mat-drawer {
+    width: 0px;
+  }
+
+  .search {
+    max-width: 250px;
+    width: 100%;
+  }
+  .title {
+    font-size: 16px;
+    margin: 1em;
+  }
 }
